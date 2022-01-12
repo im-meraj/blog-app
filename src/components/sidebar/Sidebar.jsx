@@ -7,7 +7,7 @@ export default function Sidebar() {
           <span className="sidebarTitle">ABOUT ME</span>
           <img
             src="https://images.unsplash.com/photo-1639049911589-e9d75b983eff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
-            alt="pic" width="100%"
+            alt="pic" width="60%" height="60%"
           />
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
