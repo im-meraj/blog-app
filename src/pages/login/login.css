@@ -31,11 +31,12 @@
 .loginButton {
     margin-top: 20px;
     cursor: pointer;
-    background-color: lightgreen;
+    background-color: red;
     border: none;
     color: white;
     border-radius: 10px;
     padding: 10px;
+    font-size: 18px;
 }
 
 .loginRegisterButton {
