@@ -1,8 +1,15 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Context } from '../../context/Context';
 import './topbar.css';
 
 function TopBar() {
-    const user = true;
+    const { user, dispatch } = useContext(Context);
+
+    const handleLogout = () => {
+        dispatch({ type: 'LOGOUT' });
+    }
+
     return (
       <div className="top">
         <div className="topLeft">
@@ -30,19 +37,33 @@ function TopBar() {
             </li>
             <li className="topListItem">
               <Link className="link" to="/write">
-                WRITE
+                WRITE A POST
               </Link>
             </li>
-            <li className="topListItem">{user && "LOGOUT"}</li>
+            {/* <li className="topListItem" onClick={handleLogout}>
+              {user && "LOGOUT"}
+            </li> */}
           </ul>
         </div>
         <div className="topRight">
           {user ? (
-            <img
-              className="topImage"
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-              alt="dp"
-            />
+            <>
+              <img
+                className="topImage"
+                src={
+                  user.profilePic
+                    ? user.profilePic
+                    : "https://res.cloudinary.com/immeraj/image/upload/v1642276822/avatar_y2fae7.jpg"
+                }
+                //src={user.profilePic}
+                alt="DP"
+              />
+              <ul className="topList">
+                <li className="topListItem logout" onClick={handleLogout}>
+                  {user && "LOGOUT"}
+                </li>
+              </ul>
+            </>
           ) : (
             <ul className="topList">
               <li className="topListItem">
@@ -59,7 +80,7 @@ function TopBar() {
             </ul>
           )}
 
-          <i className="topSearchIcon fas fa-search"></i>
+          {/* <i className="topSearchIcon fas fa-search"></i> */}
         </div>
       </div>
     );

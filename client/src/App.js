@@ -7,6 +7,8 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import axios from "axios";
+import { useContext } from "react";
+import { Context } from "./context/Context";
 
 axios.defaults.baseURL = "http://localhost:4000/api";
 axios.defaults.params = {};
@@ -14,7 +16,7 @@ axios.defaults.params = {};
 
 
 function App() {
-  const user = true;
+  const {user} = useContext(Context);
   return (
     <div>
       <Router>

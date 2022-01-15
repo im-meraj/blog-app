@@ -58,3 +58,8 @@
     cursor: pointer;
     margin-left: 15px;
 }
+
+.logout {
+    margin-left: 20px;
+    margin-right: 0px;
+}
