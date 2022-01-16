@@ -6,7 +6,7 @@ export default function Posts({ posts }) {
       <div className="posts">
         {posts.map(post => (
           <Post post={post}/>
-        ))}
+        )).reverse()}
       </div>
     );
 }

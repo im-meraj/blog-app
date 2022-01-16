@@ -17,18 +17,19 @@ export default function Sidebar() {
     return (
       <div className="sidebar">
         <div className="sidebarItem">
-          <span className="sidebarTitle">ABOUT ME</span>
+          <span className="sidebarTitle">ABOUT SUIIT</span>
           <img
-            src="https://images.unsplash.com/photo-1639049911589-e9d75b983eff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
+            src="https://lh5.googleusercontent.com/p/AF1QipNK2oU5NcWUfHijDahFGzqXZGd7VvRUI2lcnbrN=w1080-k-no"
             alt="pic"
             width="60%"
             height="60%"
           />
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Dignissimos laudantium in ullam perferendis obcaecati qui,
-            temporibus non ex, quae reiciendis autem esse. Commodi, earum
-            nesciunt eos accusantium ullam id beatae.
+            Sambalpur University Institute of Information Technology (SUIIT) is
+            functioning successfully since the year 2010 as an autonomous
+            constituent institute of Sambalpur University in the line of IIITs
+            to impart training and to have quality research program relating to
+            Information Technology and allied subjects.
           </p>
         </div>
         <div className="sidebarItem">
@@ -36,7 +37,7 @@ export default function Sidebar() {
           <ul className="sidebarList">
             {categories.map((category) => (
               <Link to={`/?category=${category.name}`} className="link">
-              <li className="sidebarListItem">{category.name}</li>
+                <li className="sidebarListItem">{category.name}</li>
               </Link>
             ))}
           </ul>

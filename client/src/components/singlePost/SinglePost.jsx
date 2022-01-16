@@ -4,6 +4,8 @@ import { Link, useLocation } from 'react-router-dom';
 import './singlePost.css';
 
 export const SinglePost = () => {
+  const PF = "http://localhost:4000/images/";
+
   const location = useLocation();
   const postId = location.pathname.split('/')[2];
 
@@ -22,7 +24,7 @@ export const SinglePost = () => {
       <div className="singlePost">
         <div className="singlePostWrapper">
           {post.photo ? (
-            <img src={post.photo} alt="" className="singlePostImg" />
+            <img src={PF + post.photo} alt="postCoverImg" className="singlePostImg" />
           ) : (
             <img
               src="https://images.pexels.com/photos/2825384/pexels-photo-2825384.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
