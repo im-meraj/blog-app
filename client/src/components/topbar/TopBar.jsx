@@ -6,6 +6,8 @@ import './topbar.css';
 function TopBar() {
     const { user, dispatch } = useContext(Context);
 
+    const PF = "http://localhost:4000/images/";
+
     const handleLogout = () => {
         dispatch({ type: 'LOGOUT' });
     }
@@ -48,16 +50,18 @@ function TopBar() {
         <div className="topRight">
           {user ? (
             <>
+            <Link className="link" to="/settings">
               <img
                 className="topImage"
                 src={
                   user.profilePic
-                    ? user.profilePic
+                    ? PF + user.profilePic
                     : "https://res.cloudinary.com/immeraj/image/upload/v1642276822/avatar_y2fae7.jpg"
                 }
                 //src={user.profilePic}
                 alt="DP"
               />
+            </Link>
               <ul className="topList">
                 <li className="topListItem logout" onClick={handleLogout}>
                   {user && "LOGOUT"}

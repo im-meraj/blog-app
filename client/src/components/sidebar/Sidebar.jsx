@@ -19,7 +19,7 @@ export default function Sidebar() {
         <div className="sidebarItem">
           <span className="sidebarTitle">ABOUT SUIIT</span>
           <img
-            src="https://lh5.googleusercontent.com/p/AF1QipNK2oU5NcWUfHijDahFGzqXZGd7VvRUI2lcnbrN=w1080-k-no"
+            src="https://res.cloudinary.com/immeraj/image/upload/v1642358582/suiit_1_h5uzvm.jpg"
             alt="pic"
             width="60%"
             height="60%"
