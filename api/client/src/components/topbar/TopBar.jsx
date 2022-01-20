@@ -6,7 +6,7 @@ import './topbar.css';
 function TopBar() {
     const { user, dispatch } = useContext(Context);
 
-    const PF = "http://localhost:4000/images/";
+    const PF = "https://suiit-social-app.herokuapp.com/images/";
 
     const handleLogout = () => {
         dispatch({ type: 'LOGOUT' });
@@ -15,10 +15,8 @@ function TopBar() {
     return (
       <div className="top">
         <div className="topLeft">
-          <i className="topIcon fab fa-facebook-square"></i>
-          <i className="topIcon fab fa-twitter-square"></i>
-          <i className="topIcon fab fa-pinterest-square"></i>
-          <i className="topIcon fab fa-instagram-square"></i>
+          <img id="logoImg" src="https://img.icons8.com/clouds/100/000000/chat.png" alt="logo" />
+          <h1 id="logoText">SUIIT Social</h1>
         </div>
         <div className="topCenter">
           <ul className="topList">
@@ -33,39 +31,38 @@ function TopBar() {
               </Link>
             </li>
             <li className="topListItem">
-              <Link className="link" to="/contact">
-                CONTACT
-              </Link>
-            </li>
-            <li className="topListItem">
               <Link className="link" to="/write">
                 WRITE A POST
               </Link>
             </li>
-            {/* <li className="topListItem" onClick={handleLogout}>
-              {user && "LOGOUT"}
-            </li> */}
+            <li className="topListItem">
+              <Link className="link" to="/messenger">
+                CHAT
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="topRight">
           {user ? (
             <>
-            <Link className="link" to="/settings">
-              <img
-                className="topImage"
-                src={
-                  user.profilePic
-                    ? PF + user.profilePic
-                    : "https://res.cloudinary.com/immeraj/image/upload/v1642276822/avatar_y2fae7.jpg"
-                }
-                //src={user.profilePic}
-                alt="DP"
-              />
-            </Link>
+              <Link className="link" to="/settings">
+                <img
+                  className="topImage"
+                  src={
+                    user.profilePic
+                      ? PF + user.profilePic
+                      : "https://res.cloudinary.com/immeraj/image/upload/v1642276822/avatar_y2fae7.jpg"
+                  }
+                  //src={user.profilePic}
+                  alt="DP"
+                />
+              </Link>
               <ul className="topList">
+              <Link className="link" to="/">
                 <li className="topListItem logout" onClick={handleLogout}>
                   {user && "LOGOUT"}
                 </li>
+              </Link>
               </ul>
             </>
           ) : (

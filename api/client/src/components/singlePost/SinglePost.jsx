@@ -5,7 +5,7 @@ import { Context } from '../../context/Context';
 import './singlePost.css';
 
 export const SinglePost = () => {
-  const PF = "http://localhost:4000/images/";
+  const PF = "https://suiit-social-app.herokuapp.com/images/";
 
   const { user } = useContext(Context);
 

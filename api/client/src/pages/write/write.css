@@ -60,3 +60,17 @@
     cursor: pointer;
     border: none;
 }
+
+.labelGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-text {
+    padding: 10px;
+}
+
+.textArea {
+    margin-left: 250px;
+}

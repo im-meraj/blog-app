@@ -27,6 +27,16 @@ app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
+app.use(
+  express.static(path.join(__dirname, "/client/build"))
+);
+
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "/client/build", "index.html")
+  );
+});
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, "images");
@@ -42,11 +52,11 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
     return res.status(200).json({message: "Image uploaded successfully"});
 });
 
-app.use("/", (req, res) => {
-    res.send("Welcome to Blog API");
-});
+// app.get("/", (req, res) => {
+//     res.send("Welcome to Blog API");
+// });
 
 
-app.listen("4000", ()=>{
+app.listen(process.env.PORT || 4000, ()=>{
     console.log("Server is running on port 4000");
 })

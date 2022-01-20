@@ -35,6 +35,7 @@ export default function Write() {
       console.log(error);
     } 
   }
+
     return (
       <div className="write">
         {file && (
@@ -46,8 +47,9 @@ export default function Write() {
         )}
         <form className="writeForm" onSubmit={handleSubmit}>
           <div className="writeFormGroup">
-            <label htmlFor="fileInput">
-              <i class="writeIcon fas fa-plus"></i>
+            <label htmlFor="fileInput" className="labelGroup">
+              <i className="writeIcon fas fa-plus"></i>
+              <p className="add-text">Add<br/>Image</p>
             </label>
             <input type="file" id="fileInput" style={{ display: "none" }} onChange={(e)=>{setFile(e.target.files[0])}}/>
             <input
@@ -58,7 +60,7 @@ export default function Write() {
               onChange={(e) => {setTitle(e.target.value)}}
             />
           </div>
-          <div className="writeFormGroup">
+          <div className="writeFormGroup textArea">
             <textarea
               placeholder="Write something..."
               type="text"
